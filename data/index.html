@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lüftersteuerung & Sensordaten</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lüftersteuerung & Sensordaten</h1>
+
+      <div class="sensor-data">
+        <h2>Innenraum</h2>
+        <p>Temperatur: <span id="tempInside">--</span> °C</p>
+        <p>Luftfeuchtigkeit: <span id="humidityInside">--</span> %</p>
+        <p>CO₂-Gehalt: <span id="co2Level">--</span> ppm</p>
+      </div>
+
+      <div class="sensor-data">
+        <h2>Außenbereich</h2>
+        <p>Temperatur: <span id="tempOutside">--</span> °C</p>
+        <p>Luftfeuchtigkeit: <span id="humidityOutside">--</span> %</p>
+      </div>
+
+      <div class="fan-control">
+        <h2>Lüftersteuerung</h2>
+
+        <label for="fanTargetTemp">Soll-Temperatur: </label>
+        <input type="number" id="fanTargetTemp" min="10" max="35" value="22" />
+        °C
+
+        <label for="fanTargetHumidity">Soll-Luftfeuchtigkeit: </label>
+        <input
+          type="number"
+          id="fanTargetHumidity"
+          min="20"
+          max="80"
+          value="50"
+        />
+        %
+
+        <h3>Manuelle Lüftersteuerung</h3>
+        <label for="fanSpeed">Lüftergeschwindigkeit (0-10): </label>
+        <input type="range" id="fanSpeed" min="0" max="10" value="5" />
+        <p>Geschwindigkeit: <span id="fanSpeedValue">5</span></p>
+
+        <div class="switchBox">
+          <label for="fanModeSwitch">Modus:</label>
+          <label class="switch">
+            <input type="checkbox" id="fanModeSwitch" />
+            <span class="slider"></span>
+          </label>
+          <p id="fanModeLabel">Manuell</p>
+
+          <label for="fanModeSwitch">ON/OFF:</label>
+          <label class="switch">
+            <input type="checkbox" id="fanModeSwitch2" />
+            <span class="slider"></span>
+          </label>
+          <p id="fanModeLabel2">Aus</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
